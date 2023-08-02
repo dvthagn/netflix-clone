@@ -5,7 +5,7 @@ import { authOptions } from "@/lib/auth";
 
 import prismadb from "@/lib/prismadb";
 
-const serverAuth = async (req: NextRequest) => {
+const serverAuth = async () => {
   const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
