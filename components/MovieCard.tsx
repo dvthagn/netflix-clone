@@ -1,12 +1,16 @@
+"use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 import { BsFillPlayFill } from "react-icons/bs";
+import FavoriteButton from "./FavoriteButton";
 
 interface MovieCardProps {
   data: Record<string, any>;
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
+  const route = useRouter();
   return (
     <div className="group bg-zinc-900 col-pan relative h-[12vw]">
       <img
@@ -77,10 +81,11 @@ const MovieCard: React.FC<MovieCardProps> = ({ data }) => {
                 hover:bg-neutral-300
 
             "
-              onClick={() => {}}
+              onClick={() => route.push(`/watch/${data?.id}`)}
             >
               <BsFillPlayFill size={30} />
             </div>
+            <FavoriteButton movieId={data?.id} />
           </div>
 
           <p className="text-green-400 font-semibold mt-4 ">

@@ -2,7 +2,7 @@ import prismadb from "@/lib/prismadb";
 import serverAuth from "@/lib/serverAuth";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
     await serverAuth();
     const movies = await prismadb.movie.findMany();

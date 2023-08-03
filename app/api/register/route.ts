@@ -34,7 +34,7 @@ export async function POST(req: Request) {
         emailVerified: new Date(),
       },
     });
-    return NextResponse.json({ user }, { status: 200 });
+    return NextResponse.json(user, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error }, { status: 400 });
   }

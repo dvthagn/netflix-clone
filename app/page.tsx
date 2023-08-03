@@ -3,10 +3,9 @@ import { redirect } from "next/navigation";
 
 import { getCurrentUser } from "@/lib/auth";
 import useCurrentUser from "@/hooks/useCurrentUser";
-import Navbar from "./components/Navbar";
-import Billboard from "./components/Billboard";
-import MovieList from "./components/MovieList";
-import MovieListWrapper from "./components/MovieListWrapper";
+import Navbar from "@/components/Navbar";
+import Billboard from "@/components/Billboard";
+import MovieListWrapper from "@/components/MovieListWrapper";
 
 const Home = async () => {
   const session = await getCurrentUser();
