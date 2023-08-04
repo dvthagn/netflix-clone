@@ -6,6 +6,7 @@ import useCurrentUser from "@/hooks/useCurrentUser";
 import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
 import MovieListWrapper from "@/components/MovieListWrapper";
+import InfoModalWrapper from "@/components/InfoModalWrapper";
 
 const Home = async () => {
   const session = await getCurrentUser();
@@ -13,6 +14,7 @@ const Home = async () => {
 
   return (
     <>
+      <InfoModalWrapper />
       <Navbar />
       <Billboard />
       <MovieListWrapper />
